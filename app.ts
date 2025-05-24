@@ -146,22 +146,127 @@
 
 
 
-const arr: number[] = [
-  42, 3, 60, 7, 19, 85, 25, 42, 64, 76,
-  1, 99, 31, 17, 27, 33, 17, 49, 57, 4,
-  2, 5, 8, 9, 10, 11, 12, 13, 14, 15,
-  16, 18, 20, 21, 22, 23, 24, 26, 28, 29,
-  30, 32, 34, 35, 36, 37, 38, 39, 40, 41,
-  43, 44, 45, 46, 47, 48, 50, 51, 52, 53,
-  54, 55, 56, 58, 59, 60, 61, 62, 63, 65,
-  66, 67, 68, 69, 70, 71, 72, 73, 74, 75,
-  77, 78, 79, 80, 81, 82, 83, 84, 85, 86,
-  87, 88, 89, 90, 91, 92, 93, 94, 95, 96
+// const arr: number[] = [
+//   42, 3, 60, 7, 19, 85, 25, 42, 64, 76,
+//   1, 99, 31, 17, 27, 33, 17, 49, 57, 4,
+//   2, 5, 8, 9, 10, 11, 12, 13, 14, 15,
+//   16, 18, 20, 21, 22, 23, 24, 26, 28, 29,
+//   30, 32, 34, 35, 36, 37, 38, 39, 40, 41,
+//   43, 44, 45, 46, 47, 48, 50, 51, 52, 53,
+//   54, 55, 56, 58, 59, 60, 61, 62, 63, 65,
+//   66, 67, 68, 69, 70, 71, 72, 73, 74, 75,
+//   77, 78, 79, 80, 81, 82, 83, 84, 85, 86,
+//   87, 88, 89, 90, 91, 92, 93, 94, 95, 96
+// ];
+
+//   console.log(arr);
+
+//   const uniqueNumbers = Array.from(new Set(arr));
+//   console.log(uniqueNumbers);
+// array ichidagi bir xil sonlarni uchirib bita qoldirish uchun method
+
+
+// function printId(id: string | number) {
+//   console.log(`the id is ${id}`);
+
+// }
+
+// printId(43)
+// printId('sadssa')
+
+
+// function getVal(value: string | number): string | number {
+//   if (typeof value === 'string') {
+//     return value.toUpperCase()
+//   } else if(typeof value === 'number') {
+//     return value.toFixed(2)
+//   }
+
+//   return `unknown type: ${value}`
+// }
+
+// console.log(getVal('hello'));
+// console.log(getVal(224.456));
+
+
+// function logError(error: {message: string } | {error: string}) {
+//   if ('message' in error) {
+//     console.log('meassage', error.message);
+//   } else {
+//     console.log('Error', error.error);
+//   }
+// }
+
+// console.log({message: 'hello'})
+// console.log({error: 'hello'})
+
+// let statusMessage: 'success' | 'error'
+
+// statusMessage = 'error'
+// statusMessage = 'kfjsd' 
+// // error faqat tepadagi keltirilgan qiymatlarga tenglasak buladi
+
+// type Status = 'succes' | 'error'
+
+// function getStatus(status: Status): Status{
+//     if (status === 'succes') {
+//         return 'succes'
+//     }
+//     return 'error'
+// }
+
+// console.log(getStatus('succes'));
+// console.log(getStatus('error'));
+
+// type readId = {
+//   readonly id: number
+//   name: string
+//   role: 'admin' | 'user' | 'guest';
+// }
+
+// const users: readId[] = [
+//   { id: 1, name: "Ali", role: "admin" },
+//   { id: 2, name: "Laylo", role: "user" },
+//   { id: 3, name: "Botir", role: "guest" },
+// ]
+
+
+  // function printUser(user: User): void {
+  //   console.log(`ID: ${user.id}, Name: ${user.name}, Role: ${user.role}`);
+  // }
+
+type User = {
+  readonly id: number;
+  name: string;
+  role: "admin" | "user" | "guest";
+};
+
+function printUser(user: User): void {
+  console.log(`ID: ${user.id}, Name: ${user.name}, Role: ${user.role}`);
+}
+
+function getShortInfo(user: User): [string, string] {
+  return [user.name, user.role];
+}
+
+function handleResponse(data: unknown): void {
+  if (typeof data === "object" && data !== null && "id" in data && "name" in data && "role" in data) {
+    const user = data as User;
+    console.log("User detected:");
+    printUser(user);
+  } else {
+    console.log("Not a valid user object.");
+  }
+}
+
+const users: User[] = [
+  { id: 1, name: "Ali", role: "admin" },
+  { id: 2, name: "Laylo", role: "user" },
+  { id: 3, name: "Botir", role: "guest" },
 ];
 
-  console.log(arr);
-  
-  const uniqueNumbers = Array.from(new Set(arr));
-  console.log(uniqueNumbers);
-
-// bir xil sonlarni uchirib bita qoldirish uchun method
+for (const user of users) {
+  printUser(user);
+  const info = getShortInfo(user);
+  console.log(`Short Info: [${info[0]}, ${info[1]}]`);
+}
