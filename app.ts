@@ -270,3 +270,4 @@ for (const user of users) {
   const info = getShortInfo(user);
   console.log(`Short Info: [${info[0]}, ${info[1]}]`);
 }
+
