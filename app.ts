@@ -1,9 +1,9 @@
 // let fullName: string = 'johon'
-// let son: number = 124
+// let num: number = 124
 // let bool: boolean = true
 
 // console.log(fullName);
-// console.log(son);
+// console.log(num);
 // console.log(bool);
 
 // const oylik: number = 1000
@@ -22,10 +22,10 @@
 // function logger(firstName: string): string {
 //     return ` ${firstName}`
 // }
-// const person1 = logger('Jahongir');
-// console.log(person1);
+// const pernum1 = logger('Jahongir');
+// console.log(pernum1);
 
-// const person = {
+// const pernum = {
 //     firstName: 'Jahongir'
 // }
 
@@ -33,8 +33,8 @@
 //     return  `hello ${data.firstName}`
 // }
 
-// const person2 = GetName(person)
-// console.log(person2);
+// const pernum2 = GetName(pernum)
+// console.log(pernum2);
 
 
 // const cars: string[] = ['bmw', 'merc']
@@ -163,7 +163,7 @@
 
 //   const uniqueNumbers = Array.from(new Set(arr));
 //   console.log(uniqueNumbers);
-// array ichidagi bir xil sonlarni uchirib bita qoldirish uchun method
+// array ichidagi bir xil numlarni uchirib bita qoldirish uchun method
 
 
 // function printId(id: string | number) {
@@ -231,43 +231,259 @@
 // ]
 
 
-  // function printUser(user: User): void {
-  //   console.log(`ID: ${user.id}, Name: ${user.name}, Role: ${user.role}`);
-  // }
+// function printUser(user: User): void {
+//   console.log(`ID: ${user.id}, Name: ${user.name}, Role: ${user.role}`);
+// }
 
-type User = {
-  readonly id: number;
-  name: string;
-  role: "admin" | "user" | "guest";
-};
+// type User = {
+//   readonly id: number;
+//   name: string;
+//   role: "admin" | "user" | "guest";
+// };
 
-function printUser(user: User): void {
-  console.log(`ID: ${user.id}, Name: ${user.name}, Role: ${user.role}`);
-}
+// function printUser(user: User): void {
+//   console.log(`ID: ${user.id}, Name: ${user.name}, Role: ${user.role}`);
+// }
 
-function getShortInfo(user: User): [string, string] {
-  return [user.name, user.role];
-}
+// function getShortInfo(user: User): [string, string] {
+//   return [user.name, user.role];
+// }
 
-function handleResponse(data: unknown): void {
-  if (typeof data === "object" && data !== null && "id" in data && "name" in data && "role" in data) {
-    const user = data as User;
-    console.log("User detected:");
-    printUser(user);
-  } else {
-    console.log("Not a valid user object.");
-  }
-}
+// function handleResponse(data: unknown): void {
+//   if (typeof data === "object" && data !== null && "id" in data && "name" in data && "role" in data) {
+//     const user = data as User;
+//     console.log("User detected:");
+//     printUser(user);
+//   } else {
+//     console.log("Not a valid user object.");
+//   }
+// }
 
-const users: User[] = [
-  { id: 1, name: "Ali", role: "admin" },
-  { id: 2, name: "Laylo", role: "user" },
-  { id: 3, name: "Botir", role: "guest" },
-];
+// const users: User[] = [
+//   { id: 1, name: "Ali", role: "admin" },
+//   { id: 2, name: "Laylo", role: "user" },
+//   { id: 3, name: "Botir", role: "guest" },
+// ];
 
-for (const user of users) {
-  printUser(user);
-  const info = getShortInfo(user);
-  console.log(`Short Info: [${info[0]}, ${info[1]}]`);
-}
+// for (const user of users) {
+//   printUser(user);
+//   const info = getShortInfo(user);
+//   console.log(`Short Info: [${info[0]}, ${info[1]}]`);
+// }
 
+
+// Amaliyot 
+
+
+// enum Role {
+//   ADMIN,
+//   STUDENT,
+// }
+
+// interface IUser {
+//   id: number
+//   name: string
+//   role: Role
+// }
+
+// interface ICourse {
+//   id: number
+//   title: string
+//   description: string
+//   student: IUser[]
+// }
+
+// function isAdmin(user: IUser): user is IUser == { role: Role.ADMIN } {
+//   return user.role === Role.ADMIN
+// }
+
+// type son = | 100 | 101 | 102 | 103
+//   | 200 | 201 | 202 | 203 | 204 | 205 | 206 | 207 | 208 | 226
+//   | 300 | 301 | 302 | 303 | 304 | 305 | 306 | 307 | 308
+//   | 400 | 401 | 402 | 403 | 404 | 405 | 406 | 407 | 408 | 409
+//   | 410 | 411 | 412 | 413 | 414 | 415 | 416 | 417 | 418 | 421
+//   | 422 | 423 | 424 | 425 | 426 | 428 | 429 | 431 | 451
+//   | 500 | 501 | 502 | 503 | 504 | 505 | 506 | 507 | 508 | 510 | 511;
+
+// function Server(num: son) {
+//   if (num === 500 || 599) {
+//     console.log(`${}`);
+//   }
+// }
+
+// Server(500)
+
+// function getInfo() {
+//   return 'salom';
+// }
+// console.log(getInfo());
+
+
+// function getUser() {
+//   return {
+//     name: 'Ali',
+//     age: 16
+//   };
+// }
+
+// console.log(getUser());
+
+
+//       class
+
+// class Car {
+//   name: string
+//   year: Date
+
+//   constructor (name: string, year: Date) {
+//     this.name = name
+//     this.year = year
+//   }
+// }
+
+// const toyota = new Car('Toyota', new Date('2000-01-09'))
+// console.log(toyota); // name: Toyota
+// toyota.name = 'Bmw'
+// console.log(toyota); // name: Bmw
+
+// const chevrolet = new Car('Nexia', new Date('2005'))
+// console.log(chevrolet);
+
+
+//   constructor
+
+// class Car {
+//   name: string
+//   year: Date
+//   isCar: boolean
+
+//   constructor (name: string = 'Unknown', year: Date = new Date()) {
+//     this.name = name
+//     this.year = year
+//     this.isCar = true
+//   }
+// }
+
+// const chevrolet = new Car()
+// chevrolet.name = 'chevrolet'
+// chevrolet.year = new Date('2005')
+// console.log(chevrolet);
+
+
+// class Car {
+//   name!: string
+//   year!: Date
+
+//   constructor(name: string, year: Date)
+//   constructor(data: {name: string; year: Date}, year?: Date)
+//   constructor (nameOrData: string | {name: string; year: Date}, year?: Date) {
+//     if (typeof nameOrData === 'string') {
+//       this.name = nameOrData
+//       this.year = year!
+//     } else if (typeof nameOrData === 'object') {
+//       this.name = nameOrData.name
+//       this.year = nameOrData.year
+//     }
+//   }
+// }
+
+// const toyota = new Car('Toyota', new Date('2001'))
+// console.log(toyota);
+
+// const chevrolet = new Car ({
+//   name: 'chevrolet',
+//   year: new Date('2005'),
+// })
+
+
+//   methods
+
+// class Person {
+//   name: string
+
+//   constructor(name: string) {
+//     this.name = name
+//   }
+
+//   greeting (age: number): string {
+//     return `hello ${this.name}, your age is ${age}`
+//   }
+// }
+
+// const user1 = new Person('Jahongir')
+// const data = user1.greeting(16)
+// console.log(data);
+
+// const user2 = new Person('Jonpulat')
+// console.log(user2.greeting(17));
+
+
+// enum Provider {
+//   Payme,
+//   Click,
+//   Uzum,
+// }
+
+// enum Status {
+//   Pending,
+//   Approved,
+//   Rejected,
+// }
+
+// class Payment {
+//   id: Provider
+//   status: Status
+//   createdAt: Date
+//   updateAt: Date
+
+
+//   constructor(id: Provider) {
+//     this.id = id
+//     this.status = Status.Pending
+//     this.createdAt = new Date()
+//     this.updateAt = new Date()
+//   }
+
+//   getLifeTime(): number {
+//     return new Date().getTime() - this.createdAt.getTime()
+//   }
+
+//   rejectPayment(): void {
+//     if (this.status === Status.Approved) {
+//       throw new Error('paymet is allready approved')
+//     }
+//     this.status = Status.Rejected
+//     this.updateAt = new Date()
+//   }
+// }
+
+// const payme = new Payment(Provider.Payme)
+// payme.status = Status.Approved
+// setTimeout(() => {
+//   payme.rejectPayment()
+//   console.log(payme)
+//   const duration = payme.getLifeTime()
+//   console.log(duration)
+//   console.log(payme);
+// }, 1000);
+
+
+//  getter & setter
+
+// class Employee {
+//   _salary: number
+//   _password: string
+
+//   set salary(num: number) {
+//     this._salary = num * 100
+//   }
+
+//   get salary(): number {
+//     return this._salary
+//   }
+// }
+
+// const John = new Employee()
+// John.salary = 10
+// const salary = John.salary
+// console.log(salary);
