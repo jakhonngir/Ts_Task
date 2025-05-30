@@ -329,7 +329,7 @@
 // console.log(getUser());
 
 
-//       class
+//     Create Class
 
 // class Car {
 //   name: string
@@ -350,7 +350,7 @@
 // console.log(chevrolet);
 
 
-//   constructor
+//   Constructor
 
 // class Car {
 //   name: string
@@ -369,6 +369,7 @@
 // chevrolet.year = new Date('2005')
 // console.log(chevrolet);
 
+//  2
 
 // class Car {
 //   name!: string
@@ -487,3 +488,41 @@
 // John.salary = 10
 // const salary = John.salary
 // console.log(salary);
+
+
+//     IMPLEMENTS
+
+interface Drivable {
+    startEngine(): void
+    drive(speed: number): void
+}
+interface Flyable {
+    fly(speed: number): void
+}
+
+
+class Car implements Drivable, Flyable {
+    model: string
+
+    constructor(model: string) {
+        this.model = model
+    }
+    startEngine(): void {
+        console.log(`${this.model} start Engine.`);
+    }
+    drive(speed: number): void {
+        console.log(`${this.model} Driving at ${speed} km/h`)
+    }
+    fly(speed: number): void {
+        console.log(`${this.model} flying at ${speed} km/h`);
+        
+    }
+}
+
+const bmw = new Car('bmw')
+bmw.startEngine()
+bmw.drive(270)
+
+const plane = new Car('Plane')
+plane.startEngine()
+plane.fly(200)
