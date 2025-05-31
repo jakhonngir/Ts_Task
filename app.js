@@ -545,12 +545,54 @@
 // }
 // console.log(MathHelper.add(2, 5));
 //   ABSTRACT CLASS
-class Animal {
-}
-class Cat extends Animal {
-    makeSound() {
-        console.log('Meow!');
+// abstract class Animal {
+//     abstract makeSound(): void
+// }
+// class Cat extends Animal {
+//     makeSound(): void {
+//         console.log('Meow!');
+//     }
+// }
+// const cat = new Cat()
+// cat.makeSound()
+//     THIS
+// class Counter {
+//     count: number = 0
+//     increment = () => {
+//         console.log(this);
+//     }
+// }
+// const c = new Counter()
+// const incrementFn = c.increment
+// incrementFn()
+// incrementFn()
+// incrementFn()
+// class User {
+//     name: string = 'John'
+//     log(this: User) {
+//         console.log(this.name);
+//     }
+// }
+class Calculator {
+    constructor() {
+        this.value = 0;
+    }
+    add(num) {
+        this.value += num;
+        return this;
+    }
+    subtract(num) {
+        this.value -= num;
+        return this;
+    }
+    multiply(num) {
+        this.value *= num;
+        return this;
+    }
+    getValue() {
+        return this.value;
     }
 }
-const cat = new Cat();
-cat.makeSound();
+const calc = new Calculator();
+const result = calc.add(6).subtract(4).multiply(3).getValue();
+console.log(result);
