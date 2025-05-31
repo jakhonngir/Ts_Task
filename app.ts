@@ -492,37 +492,113 @@
 
 //     IMPLEMENTS
 
-interface Drivable {
-    startEngine(): void
-    drive(speed: number): void
-}
-interface Flyable {
-    fly(speed: number): void
-}
+// interface Drivable {
+//     startEngine(): void
+//     drive(speed: number): void
+// }
+// interface Flyable {
+//     fly(speed: number): void
+// }
 
 
-class Car implements Drivable, Flyable {
-    model: string
+// class Car implements Drivable, Flyable {
+//     model: string
 
-    constructor(model: string) {
-        this.model = model
-    }
-    startEngine(): void {
-        console.log(`${this.model} start Engine.`);
-    }
-    drive(speed: number): void {
-        console.log(`${this.model} Driving at ${speed} km/h`)
-    }
-    fly(speed: number): void {
-        console.log(`${this.model} flying at ${speed} km/h`);
+//     constructor(model: string) {
+//         this.model = model
+//     }
+//     startEngine(): void {
+//         console.log(`${this.model} start Engine.`);
+//     }
+//     drive(speed: number): void {
+//         console.log(`${this.model} Driving at ${speed} km/h`)
+//     }
+//     fly(speed: number): void {
+//         console.log(`${this.model} flying at ${speed} km/h`);
         
+//     }
+// }
+
+// const bmw = new Car('bmw')
+// bmw.startEngine()
+// bmw.drive(270)
+
+// const plane = new Car('Plane')
+// plane.startEngine()
+// plane.fly(200)
+
+
+
+//   EXTENDES
+
+// class Animal {
+//     id: number
+//     name: string
+
+//     constructor(name: string, id: number) {
+//         this.name = name
+//         this.id = id
+//     }
+
+//     speak() {
+//         this.id = 10 * this.id
+//         console.log(`${this.name} makes a sound`);
+//     }
+
+//     showInfo() {
+//         console.log(`name: ${this.name}, Id ${this.id}`);      
+//     }
+// }
+
+// class Cat extends Animal {
+//     constructor(name:string) {
+//         const id = Math.random()
+//         super(name, id)
+//     }
+
+//     override speak () {
+//         super.speak()
+//         console.log(`${this.name} meows`);
+//     }
+// }
+
+// const cat = new Cat('kitty')
+// const id = cat.id
+// cat.speak()
+// cat.showInfo()
+
+
+
+class Shape {
+    color: string
+
+    constructor(color: string) {
+        this.color = color
+    }
+
+    describe () {
+        console.log(`this shape is ${this.color}`);
     }
 }
 
-const bmw = new Car('bmw')
-bmw.startEngine()
-bmw.drive(270)
+class Circle extends Shape {
+    radius: number
 
-const plane = new Car('Plane')
-plane.startEngine()
-plane.fly(200)
+    constructor(color: string, radius: number) {
+        super(color)
+        this.radius = radius
+    }
+
+    override describe(): void {
+        super.describe()
+        console.log(`this circle has a radius of ${this.radius}`);
+    }
+
+    area() {
+        return Math.PI * this.radius ** 2
+    }
+}
+
+const circle = new Circle('red', 10)
+circle.describe()
+console.log(circle.area());
