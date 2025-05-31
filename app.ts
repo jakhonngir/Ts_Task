@@ -735,15 +735,74 @@
 
 //   ABSTRACT CLASS
 
-abstract class Animal {
-    abstract makeSound(): void
-}
+// abstract class Animal {
+//     abstract makeSound(): void
+// }
 
-class Cat extends Animal {
-    makeSound(): void {
-        console.log('Meow!');
+// class Cat extends Animal {
+//     makeSound(): void {
+//         console.log('Meow!');
+//     }
+// }
+
+// const cat = new Cat()
+// cat.makeSound()
+
+
+
+
+
+//     THIS
+
+
+// class Counter {
+//     count: number = 0
+
+//     increment = () => {
+//         console.log(this);
+//     }
+// }
+
+// const c = new Counter()
+
+// const incrementFn = c.increment
+// incrementFn()
+// incrementFn()
+// incrementFn()
+
+
+// class User {
+//     name: string = 'John'
+
+//     log(this: User) {
+//         console.log(this.name);
+//     }
+// }
+
+
+class Calculator {
+    value: number = 0
+
+    add(num: number): Calculator {
+        this.value += num
+        return this
+    }
+
+    subtract(num:number): this {
+        this.value -= num
+        return this
+    }
+
+    multiply (num: number): this {
+        this.value *= num
+        return this
+    }
+
+    getValue(): number {
+        return this.value
     }
 }
 
-const cat = new Cat()
-cat.makeSound()
+const calc = new Calculator()
+const result = calc.add(6).subtract(4).multiply(3).getValue()
+console.log(result);
