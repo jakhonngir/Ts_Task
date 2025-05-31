@@ -526,7 +526,7 @@
 //         this.increment()
 //         return a+b
 //     }
-//     static getSecretKey( ) {
+//     static getSecretKey() {
 //         return this.secretKey
 //     }
 //     getTitle() {
@@ -540,7 +540,17 @@
 // console.log(Counter.count);
 // console.log(Counter.add(10, 100));
 // console.log(Counter.count);
-const MathHelper = {
-    add: (a, b) => a + b,
-};
-console.log(MathHelper.add(2, 5));
+// const MathHelper = {
+//     add: (a: number, b: number) => a + b,
+// }
+// console.log(MathHelper.add(2, 5));
+//   ABSTRACT CLASS
+class Animal {
+}
+class Cat extends Animal {
+    makeSound() {
+        console.log('Meow!');
+    }
+}
+const cat = new Cat();
+cat.makeSound();
