@@ -453,6 +453,7 @@
 // const circle = new Circle('red', 10)
 // circle.describe()
 // console.log(circle.area());
+//    COMPOSITION & ACCESS MODIFIER
 // class User {
 //     name: string
 //     constructor(name: string) {
@@ -485,25 +486,61 @@
 // }
 // const userWithPayment = new UserWithPayment2(new User('John'), new Payment(100))
 // userWithPayment.showInfo()
-class Person {
-    constructor(age) {
-        this.age = age;
-    }
-}
-class Employee extends Person {
-    constructor(name, salary, age) {
-        super(age);
-        this.name = name;
-        this.salary = salary;
-    }
-    showBonus() {
-        return this.salary * 0.2;
-    }
-    showAge() {
-        return this.age;
-    }
-}
-const employee = new Employee('John', 2000, 22);
-console.log(employee.name);
-console.log(employee.showBonus());
-console.log(employee.showAge());
+// class Person {
+//     protected age: number
+//     constructor(age: number) {
+//         this.age = age
+//     }
+// }
+// class Employee extends Person {
+//     public name: string
+//     private salary: number
+//     constructor(name: string, salary: number, age: number) {
+//         super(age)
+//         this.name = name
+//         this.salary = salary
+//     }
+//     showBonus() {
+//         return this.salary * 0.2
+//     }
+//     showAge() {
+//         return this.age
+//     }
+// }
+// const employee = new Employee('John', 2000, 22)
+// console.log(employee.name);
+// console.log(employee.showBonus());
+// console.log(employee.showAge());
+//    STATIC & C# FARQI
+// class Counter {
+//     static count: number = 0
+//     private static secretKey: string = '122312'
+//     title: string
+//     constructor(title: string) {
+//         this.title = title
+//     }
+//     static increment() {
+//         Counter.count++
+//     }
+//     static add(a: number, b: number) {
+//         this.increment()
+//         return a+b
+//     }
+//     static getSecretKey( ) {
+//         return this.secretKey
+//     }
+//     getTitle() {
+//         return this.title
+//     }
+// }
+// const c = new Counter('c1')
+// console.log(c.title);
+// console.log(Counter.count);
+// Counter.increment()
+// console.log(Counter.count);
+// console.log(Counter.add(10, 100));
+// console.log(Counter.count);
+const MathHelper = {
+    add: (a, b) => a + b,
+};
+console.log(MathHelper.add(2, 5));
