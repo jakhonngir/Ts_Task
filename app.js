@@ -427,27 +427,83 @@
 // const id = cat.id
 // cat.speak()
 // cat.showInfo()
-class Shape {
-    constructor(color) {
-        this.color = color;
-    }
-    describe() {
-        console.log(`this shape is ${this.color}`);
+// class Shape {
+//     color: string
+//     constructor(color: string) {
+//         this.color = color
+//     }
+//     describe () {
+//         console.log(`this shape is ${this.color}`);
+//     }
+// }
+// class Circle extends Shape {
+//     radius: number
+//     constructor(color: string, radius: number) {
+//         super(color)
+//         this.radius = radius
+//     }
+//     override describe(): void {
+//         super.describe()
+//         console.log(`this circle has a radius of ${this.radius}`);
+//     }
+//     area() {
+//         return Math.PI * this.radius ** 2
+//     }
+// }
+// const circle = new Circle('red', 10)
+// circle.describe()
+// console.log(circle.area());
+// class User {
+//     name: string
+//     constructor(name: string) {
+//         this.name = name
+//     }
+//     sayHello() {
+//         console.log(`hello ${this.name}`);
+//     }
+// }
+// class Payment {
+//     amount: number
+//     constructor(amount: number) {
+//         this.amount = amount
+//     }
+//     pay() {
+//         console.log(`you paid ${this.amount}`)
+//     }
+// }
+// class UserWithPayment2 {
+//     user: User
+//     payment: Payment
+//     constructor(user: User, payment: Payment) {
+//         this.payment = payment
+//         this.user = user
+//     }
+//     showInfo() {
+//         this.user.sayHello()
+//         this.payment.pay()
+//     }
+// }
+// const userWithPayment = new UserWithPayment2(new User('John'), new Payment(100))
+// userWithPayment.showInfo()
+class Person {
+    constructor(age) {
+        this.age = age;
     }
 }
-class Circle extends Shape {
-    constructor(color, radius) {
-        super(color);
-        this.radius = radius;
+class Employee extends Person {
+    constructor(name, salary, age) {
+        super(age);
+        this.name = name;
+        this.salary = salary;
     }
-    describe() {
-        super.describe();
-        console.log(`this circle has a radius of ${this.radius}`);
+    showBonus() {
+        return this.salary * 0.2;
     }
-    area() {
-        return Math.PI * this.radius ** 2;
+    showAge() {
+        return this.age;
     }
 }
-const circle = new Circle('red', 10);
-circle.describe();
-console.log(circle.area());
+const employee = new Employee('John', 2000, 22);
+console.log(employee.name);
+console.log(employee.showBonus());
+console.log(employee.showAge());
