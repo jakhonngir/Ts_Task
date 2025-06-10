@@ -937,3 +937,32 @@
 // const userEmail = getProperty(user, 'email')
 
 // console.log(userName);
+
+
+
+//   Class
+
+class Shape<T, U> {
+    private content: T
+    radius: U
+
+
+    constructor(content: T, radius: U) {
+        this.content = content
+        this.radius = radius
+    }
+
+    getValue(): T {
+        return this.content
+    }
+
+    getRadius(): U {
+        return this.radius
+    }
+}
+
+const shape = new Shape<string, number>('hello', 20)
+console.log(shape.getValue());
+
+const shape2 = new Shape<number, string>(20, 'dsafas')
+console.log(shape2.getValue());
