@@ -573,26 +573,47 @@
 //         console.log(this.name);
 //     }
 // }
-class Calculator {
-    constructor() {
-        this.value = 0;
-    }
-    add(num) {
-        this.value += num;
-        return this;
-    }
-    subtract(num) {
-        this.value -= num;
-        return this;
-    }
-    multiply(num) {
-        this.value *= num;
-        return this;
-    }
-    getValue() {
-        return this.value;
-    }
-}
-const calc = new Calculator();
-const result = calc.add(6).subtract(4).multiply(3).getValue();
-console.log(result);
+// class Calculator {
+//     value: number = 0
+//     add(num: number): Calculator {
+//         this.value += num
+//         return this
+//     }
+//     subtract(num:number): this {
+//         this.value -= num
+//         return this
+//     }
+//     multiply (num: number): this {
+//         this.value *= num
+//         return this
+//     }
+//     getValue(): number {
+//         return this.value
+//     }
+// }
+// const calc = new Calculator()
+// const result = calc.add(6).subtract(4).multiply(3).getValue()
+// console.log(result);
+//   Generic nima
+// function idintity<T>(arg: T) {
+//     return arg
+// }
+// idintity<number>(5)
+// idintity<string>('son')
+// interface IUser {
+//     name: string
+//     age: number
+// }
+// const users: (IUser & {isMarried: boolean})[] = [
+//     {name: 'Jahongir', age: 17, isMarried: false}
+// ]
+var Roles;
+(function (Roles) {
+    Roles[Roles["ADMIN"] = 0] = "ADMIN";
+    Roles[Roles["USER"] = 1] = "USER";
+})(Roles || (Roles = {}));
+const roles = {
+    [Roles.ADMIN]: 'Admin',
+    [Roles.USER]: 'User',
+};
+console.log(Roles.ADMIN);
