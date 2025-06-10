@@ -831,14 +831,67 @@
 
 
 
-enum Roles {
-    ADMIN,
-    USER,
+// enum Roles {
+//     ADMIN,
+//     USER,
+// }
+
+// type UserRoles = Record<string, string>
+
+// const roles: UserRoles = {
+//     [Roles.ADMIN]:'Admin',
+//     [Roles.USER]:'User',
+// }
+
+
+
+//   Generic function
+
+
+// function identity<T, U>(val: T, val2: U): [T, U] {
+//     return [val, val2]
+// }
+
+// const StringIdentity = identity<string, number>('hello', 21)
+
+
+// interface Name {
+//     name: string
+// }
+
+// interface Age {
+//     age: number
+// }
+
+// function merge<T, U>(obj1: T, obj2: U,): T & U {
+//     return{...obj1, ...obj2}
+// }
+
+// const User = merge({name:'Jahongir'}, {age: 17})
+
+
+interface IUser {
+    name: string
 }
 
-type UserRoles = Record<string, string>
-
-const roles: UserRoles = {
-    [Roles.ADMIN]:'Admin',
-    [Roles.USER]:'User',
+function getFirstElement<T>(arr: T[]): T {
+    return arr[0]
 }
+
+const firstUser = getFirstElement<IUser>([{name: 'John'}])
+
+console.log(firstUser);
+
+
+
+
+interface Shape<T> {
+    radius: T
+}
+
+function createShape<T = number>(val: T): Shape<T> {
+    return {radius: val}
+}
+
+const firstShape = createShape(10)
+
