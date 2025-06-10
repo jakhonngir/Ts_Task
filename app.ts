@@ -870,28 +870,70 @@
 // const User = merge({name:'Jahongir'}, {age: 17})
 
 
-interface IUser {
-    name: string
-}
+// interface IUser {
+//     name: string
+// }
 
-function getFirstElement<T>(arr: T[]): T {
-    return arr[0]
-}
+// function getFirstElement<T>(arr: T[]): T {
+//     return arr[0]
+// }
 
-const firstUser = getFirstElement<IUser>([{name: 'John'}])
+// const firstUser = getFirstElement<IUser>([{name: 'John'}])
 
-console.log(firstUser);
-
-
+// console.log(firstUser);
 
 
-interface Shape<T> {
-    radius: T
-}
 
-function createShape<T = number>(val: T): Shape<T> {
-    return {radius: val}
-}
 
-const firstShape = createShape(10)
+// interface Shape<T> {
+//     radius: T
+// }
 
+// function createShape<T = number>(val: T): Shape<T> {
+//     return {radius: val}
+// }
+
+// const firstShape = createShape(10)
+
+
+
+
+//    type in generic
+
+
+// type Pair<T, U> = [T, U]
+
+// const pair1: Pair<number, string> = [1, 'one']
+
+
+// //
+// interface IUser<T, U> {
+//     name: T
+//     showAge: (age: U) => void
+// }
+
+// const user1: IUser<string, number> = {
+//     name: 'john',
+//     showAge(age) {
+//         console.log(`name ${this.name}, Age ${age}`);
+//     }
+// }
+
+// user1.showAge(17)
+
+
+////
+// function getProperty<T, K extends keyof T>(obj: T, key: K) {
+//     return obj[key]
+// }
+
+// const user = {
+//     id: 1,
+//     name: 'john',
+//     email: 'john@gmail.com',
+// }
+
+// const userName = getProperty(user, 'name')
+// const userEmail = getProperty(user, 'email')
+
+// console.log(userName);
