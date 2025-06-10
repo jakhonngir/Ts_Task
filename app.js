@@ -662,14 +662,31 @@
 // }
 // user1.showAge(17)
 ////
-function getProperty(obj, key) {
-    return obj[key];
+// function getProperty<T, K extends keyof T>(obj: T, key: K) {
+//     return obj[key]
+// }
+// const user = {
+//     id: 1,
+//     name: 'john',
+//     email: 'john@gmail.com',
+// }
+// const userName = getProperty(user, 'name')
+// const userEmail = getProperty(user, 'email')
+// console.log(userName);
+//   Class
+class Shape {
+    constructor(content, radius) {
+        this.content = content;
+        this.radius = radius;
+    }
+    getValue() {
+        return this.content;
+    }
+    getRadius() {
+        return this.radius;
+    }
 }
-const user = {
-    id: 1,
-    name: 'john',
-    email: 'john@gmail.com',
-};
-const userName = getProperty(user, 'name');
-const userEmail = getProperty(user, 'email');
-console.log(userName);
+const shape = new Shape('hello', 20);
+console.log(shape.getValue());
+const shape2 = new Shape(20, 'dsafas');
+console.log(shape2.getValue());
